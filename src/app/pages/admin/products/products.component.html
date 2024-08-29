@@ -1,0 +1,77 @@
+<div class="row">
+    <div [ngClass]="isSidePanelVisible ? 'col-8' : 'col-12' ">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 fs-4 fs-bold text-white">Product List</div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-success" (click)="openSidePanel()">New</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4" *ngIf="isSidePanelVisible">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <div class="row">
+                    <div class="col-6 fs-4 fs-bold text-white">New Product</div>
+                    <div class="col-6 text-end">
+                        <button class="btn btn-sm btn-success" (click)="closeSidePanel()">Close</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label>SKU</label>
+                        <input type="text" class="form-control m-2" [(ngModel)]="productObj.productSku">
+                    </div>
+                    <div class="col-6">
+                        <label>Name</label>
+                        <input type="text" class="form-control m-2" [(ngModel)]="productObj.productName">
+                    </div>
+                    <div class="col-6">
+                        <label>Short Name</label>
+                        <input type="text" class="form-control m-2" [(ngModel)]="productObj.productShortName">
+                    </div>
+                    <div class="col-6">
+                        <label>Price</label>
+                        <input type="number" class="form-control m-2" [(ngModel)]="productObj.productPrice">
+                    </div>
+                    <div class="col-6">
+                        <label>Category</label>
+                        <input type="number" class="form-control m-2" [(ngModel)]="productObj.categoryId">
+                    </div>
+                    <div class="col-6">
+                        <label>Delivery Time Span</label>
+                        <input type="number" class="form-control m-2" [(ngModel)]="productObj.deliveryTimeSpan">
+                    </div>
+                    <div class="col-12">
+                        <label>Image Url</label>
+                        <input type="text" class="form-control m-2" [(ngModel)]="productObj.productImageUrl">
+                    </div>
+                    <div class="col-12">
+                        <label >Description</label>
+                        <textarea class="form-control m-2" rows="3"   [(ngModel)]="productObj.productDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
